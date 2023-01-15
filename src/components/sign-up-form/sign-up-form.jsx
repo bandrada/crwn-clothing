@@ -6,6 +6,9 @@ import {
  } from '../../authentication/firebase';
 
 import FormInput from '../form-input/form-input';
+import Button from '../button/button';
+
+import './sign-up-form.scss';
 
 const defaultFormFields = {
     displayName: '',
@@ -56,8 +59,9 @@ const SignUpForm = () => {
     };
 
     return (
-        <div>
-            <h1>Sign up with email and password</h1>
+        <div className='sign-up-container'>
+            <h2>Don't have an account yet?</h2>
+            <span>Sign up with your email and password</span>
             <form onSubmit={(handleSubmit)}>
                 <FormInput 
                     label='Display Name'
@@ -84,7 +88,7 @@ const SignUpForm = () => {
                     value={password}
                 />
                 <FormInput 
-                    label='Confirm Passwor'
+                    label='Confirm Password'
                     type='password' 
                     required 
                     onChange={handleChange} 
@@ -92,7 +96,7 @@ const SignUpForm = () => {
                     value={confirmPassword}
                 />
 
-                <button type="submit">Sign up</button>
+                <Button buttonType='' type="submit">Sign up</Button>
             </form>
         </div>
     );
