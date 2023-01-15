@@ -1,6 +1,6 @@
 import Directory from "../category/directory";
 
-function Home() {
+function HomePage() {
     const categories = [
       {
         "id": 1,
@@ -33,4 +33,4 @@ function Home() {
     );
   }
   
-  export default Home;
+  export default HomePage;

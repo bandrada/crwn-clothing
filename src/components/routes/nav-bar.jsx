@@ -3,12 +3,12 @@ import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
 
-import './navigation.scss';
+import './nav-bar.scss';
 
-const Navigation = () => {
+const NavBar = () => {
   return (
     <Fragment>
-      <div className='navigation'>
+      <div className='nav-bar'>
         <Link className='logo-container' to='/'>
             <CrwnLogo className='logo' />
         </Link>
@@ -16,7 +16,7 @@ const Navigation = () => {
             <Link className='nav-link' to='/shop'>
                 SHOP
             </Link>
-            <Link className='nav-link' to='/sign-in'>
+            <Link className='nav-link' to='/auth'>
                 SIGN IN
             </Link>
         </div>
@@ -26,4 +26,4 @@ const Navigation = () => {
   );
 }
 
-export default Navigation;
+export default NavBar;

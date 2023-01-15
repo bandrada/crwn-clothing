@@ -1,7 +1,7 @@
 import './button.scss';
 
 const BUTTON_TYPE = {
-    google: 'gootle-sign-in',
+    google: 'google-sign-in',
     inverted: 'invested'
 }
 
