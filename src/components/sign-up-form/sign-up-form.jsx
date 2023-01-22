@@ -45,7 +45,7 @@ const SignUpForm = () => {
                 email, 
                 password
             );
-            
+
             await createUserDocFromAuth(user, { displayName });
             resetForm();
             

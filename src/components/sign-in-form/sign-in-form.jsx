@@ -20,16 +20,14 @@ const SignInForm = () => {
     const { email, password } = formFields;
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocFromAuth(user);
+        await signInWithGooglePopup();
     }
 
     const signInWithEmail = async (event) => {
         event.preventDefault();
 
         try {
-            const response = await signInWithEmailPasswordAuth(email, password);
-            console.log(response);
+            await signInWithEmailPasswordAuth(email, password);
             resetForm();
         } catch (error) {
             if(error.code === 'auth/invalid-email' || error.code === 'auth/wrong-password'){
