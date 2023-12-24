@@ -13,3 +13,4 @@ Check out the site at [https://sparkly-maamoul-1420b3.netlify.app](https://spark
 - Inventory Addition
 - Checkout Cart
 - Payment
+ 
