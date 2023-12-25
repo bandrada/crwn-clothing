@@ -1,12 +1,13 @@
 import './App.css';
 import './components/category/directory';
-import HomePage from './components/routes/home-page';
-import NavBar from './components/routes/nav-bar';
-import AuthPage from './components/routes/auth-page';
+import HomePage from './routes/home-page';
+import NavBar from './routes/nav-bar';
+import AuthPage from './routes/auth-page';
 import { Routes, Route } from 'react-router-dom';
+import Shop from './routes/shop';
 
 const ShopPage = () => {
-  return <h1>Shop</h1>
+  return <Shop />
 }
 
 function App() {
