@@ -1,10 +1,10 @@
 import { Fragment, useContext } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
-import { ReactComponent as CrwnLogo } from '../../assets/crown.svg'
+import { ReactComponent as CrwnLogo } from '../logo.svg'
 
-import { UserContext } from '../../contexts/user';
-import { signOutUser } from '../../authentication/firebase';
+import { UserContext } from '../contexts/user';
+import { signOutUser } from '../authentication/firebase';
 
 import './nav-bar.scss';
 

@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
 import PRODUCTS from '../shop-data.json';
-import { onAuthStateChangedListener, createUserDocFromAuth } from '../authentication/firebase';
 
 // actual value to access
 export const ProductContext = createContext({
