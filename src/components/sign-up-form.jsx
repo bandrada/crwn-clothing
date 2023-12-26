@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { 
     createAuthUserWithEmailAndPassword,
     createUserDocFromAuth
- } from '../../authentication/firebase';
+ } from '../authentication/firebase';
 
-import FormInput from '../form-input/form-input';
-import Button from '../button/button';
+import FormInput from './form-input';
+import Button from './button';
 
 import './sign-up-form.scss';
 

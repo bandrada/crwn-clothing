@@ -1,5 +1,5 @@
 import './App.css';
-import './components/category/directory';
+import './components/directory';
 import HomePage from './routes/home-page';
 import NavBar from './routes/nav-bar';
 import AuthPage from './routes/auth-page';
