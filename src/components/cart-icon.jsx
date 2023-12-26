@@ -9,14 +9,17 @@ import './cart-icon.scss';
 const CartIcon = () => {
     const { isCartOpen, setIsCartOpen } = useContext(CartContext);
     
-    const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+    const toggleIsCartOpen = () => {
+        console.log(isCartOpen);
+        setIsCartOpen(!isCartOpen);
+    }
 
     return (
         <div className='cart-icon-container' onclick={toggleIsCartOpen}>
             <ShoppingIcon className='shopping-icon' />
             <span className='item-count'>0</span>
         </div>
-    )
-}
+    );
+};
 
 export default CartIcon;
