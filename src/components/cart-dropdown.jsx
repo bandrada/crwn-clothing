@@ -18,9 +18,9 @@ const CartDropdown = () => {
                     <CartItem key={item.id} cartItem={item} />
                 ))}
             </div>
-            <Button>
-                <Link to='/checkout'>CHECKOUT</Link>
-            </Button>
+            <Link to='/checkout'>
+                <Button>CHECKOUT</Button>
+            </Link>
         </div>
     );
 };
