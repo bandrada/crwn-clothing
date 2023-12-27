@@ -17,7 +17,7 @@ const CartDropdown = () => {
                     <CartItem key={item.id} cartItem={item} />
                 ))}
             </div>
-            <Button>CHECKOUT</Button>
+            <Button onClick={console.log('checkout')}>CHECKOUT</Button>
         </div>
     );
 };
