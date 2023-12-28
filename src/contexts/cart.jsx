@@ -48,7 +48,11 @@ export const CartProvider = ({ children }) => {
     const changeCartQuantity = (id, change) => {
         const updatedItems = cartItems.map((item) => {
             if(item.id === id) {
-                item.quantity += change;
+                if (item.quantity === 1 && change < 0) {
+                    // nothing
+                } else {
+                    item.quantity += change;
+                }
                 return item;
             }
             return item;
