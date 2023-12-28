@@ -1,17 +1,23 @@
 import './checkout-item.scss';
 
+import { useContext } from 'react';
+
+import { CartContext } from '../contexts/cart';
+
 const CheckoutItem = ({cartItem}) => {
-    const { name, imageUrl, price, quantity } = { ...cartItem };
+    const { removeFromCart, changeCartQuantity } = useContext(CartContext);
+    const { id, name, imageUrl, price, quantity } = { ...cartItem };
+    
     const increment = () => {
-        console.log('increment');
+        changeCartQuantity(id, 1);
     }
 
     const decrement = () => {
-        console.log('decrement');
+        changeCartQuantity(id, -1);
     }
 
     const remove = () => {
-        console.log('remove');
+        removeFromCart(id);
     }
 
     return (
