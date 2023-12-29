@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<NavBar />}>
         <Route index element={<HomePage />}/>
-        <Route path='shop' element={<Shop />}/>
+        <Route path='shop/*' element={<Shop />} />
         <Route path='auth' element={<AuthPage />}/>
         <Route path='checkout' element={<Checkout />}/>
       </Route>
