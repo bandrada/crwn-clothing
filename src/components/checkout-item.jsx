@@ -7,7 +7,7 @@ import { CartContext } from '../contexts/cart';
 const CheckoutItem = ({cartItem}) => {
     const { removeFromCart, changeCartQuantity } = useContext(CartContext);
     const { id, name, imageUrl, price, quantity } = { ...cartItem };
-    
+
     const increment = () => {
         changeCartQuantity(id, 1);
     }
@@ -25,14 +25,14 @@ const CheckoutItem = ({cartItem}) => {
             <div className='image-container'>
                 <img src={imageUrl} alt={name}/>
             </div>
-            <div className='name'>{name}</div>
+            <span className='name'>{name}</span>
             <span className='quantity'>
-                <div className='arrow' onClick={decrement}>{`<`}</div>
+                <div className='arrow' onClick={decrement}>&#10094;</div>
                 <div className='value'>{quantity}</div>
-                <div className='arrow' onClick={increment}>{`>`}</div>
+                <div className='arrow' onClick={increment}>&#10095;</div>
             </span>
-            <div className='price'>{price}</div>
-            <div className='remove-button' onClick={remove}>X</div>
+            <span className='price'>{price}</span>
+            <div className='remove-button' onClick={remove}>&#10005;</div>
         </div>
     );
 };
