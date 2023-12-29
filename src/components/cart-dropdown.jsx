@@ -9,15 +9,20 @@ import CartItem from './cart-item';
 import './cart-dropdown.scss';
 
 const CartDropdown = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, setIsCartOpen } = useContext(CartContext);
     const navigate = useNavigate();
 
     const goToCheckoutHandler = () => {
         navigate('/checkout');
+        closeDropdown();
+    }
+
+    const closeDropdown = () => {
+        setIsCartOpen(false);
     }
 
     return (
-        <div className='cart-dropdown-container'>
+        <div className='cart-dropdown-container' onMouseUp={closeDropdown}>
             <div className='cart-items'>
                 {cartItems.map((item) => (
                     <CartItem key={item.id} cartItem={item} />
