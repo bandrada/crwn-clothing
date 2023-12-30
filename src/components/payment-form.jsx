@@ -1,8 +1,13 @@
+import { useContext, useState } from "react";
+import { UserContext } from "../contexts/user";
+
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 import Button from "./button";
 
 const PaymentForm = () => {
+    const { currentUser } = useContext(UserContext);
+    const [isProcessingPayment, setIsProcessingPayment] = useState(false);
     const stripe = useStripe();
     const elements = useElements();
     const paymentHandler = async (e) => {
@@ -11,6 +16,8 @@ const PaymentForm = () => {
         if(!stripe || !elements) {
             return;
         }
+
+        setIsProcessingPayment(true);
 
         const response = await fetch('/.netlify/functions/create-payment-intent', {
             method: 'post',
@@ -35,10 +42,12 @@ const PaymentForm = () => {
             payment_method: {
                 card: elements.getElement(CardElement),
                 billing_details: {
-                    name: 'Bandrada.Dev'
+                    name: currentUser ? currentUser.displayName : 'Guest'
                 }
             }
         });
+
+        setIsProcessingPayment(false);
 
         if(paymentResult.error) {
             alert(paymentResult.error);
@@ -53,7 +62,11 @@ const PaymentForm = () => {
             <div className='body'>
                 <h2>Credit Card Payment: </h2>
                 <CardElement />
-                <Button buttonType='inverted' onClick={paymentHandler}>Pay Here</Button>
+                <Button
+                    isLoading={isProcessingPayment} 
+                    buttonType='inverted' 
+                    onClick={paymentHandler}
+                >Pay Here</Button>
             </div>
         </div>
     );
