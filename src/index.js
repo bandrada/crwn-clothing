@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
 
 import App from './App';
 import { UserProvider } from './contexts/user';
 import { CategoriesProvider } from './contexts/categories';
 import { CartProvider } from './contexts/cart';
+import { stripePromise } from './payment/stripe';
 
 import './index.scss';
 
@@ -17,7 +19,9 @@ root.render(
       <UserProvider>
         <CategoriesProvider>
           <CartProvider>
-            <App />
+            <Elements stripe={stripePromise}>
+              <App />
+            </Elements>
           </CartProvider>
         </CategoriesProvider>
       </UserProvider>
