@@ -30,7 +30,8 @@ const PaymentForm = () => {
         console.log(response);
         console.log(response.paymentIntent);
         if (!response.paymentIntent){
-            console.log('no payment intent');
+            alert('no payment intent');
+            setIsProcessingPayment(false);
             return;
         }
         console.log(response.paymentIntent.client_secret);
@@ -60,7 +61,6 @@ const PaymentForm = () => {
     return (
         <div className='payment-form-container'>
             <div className='body'>
-                <h2>Credit Card Payment: </h2>
                 <CardElement />
                 <Button
                     isLoading={isProcessingPayment} 
